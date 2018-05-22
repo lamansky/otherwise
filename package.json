@@ -1,0 +1,34 @@
+{
+  "name": "otherwise",
+  "version": "1.0.0",
+  "description": "Executes fallback behavior if a function was unsuccessful.",
+  "keywords": [
+    "else",
+    "fallback"
+  ],
+  "author": "John Lamansky",
+  "license": "MIT",
+  "homepage": "https://github.com/lamansky/otherwise",
+  "repository": "lamansky/otherwise",
+  "main": "index.js",
+  "files": [],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "errate": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-lamansky": "^1.0.0",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": "lamansky",
+    "env": {
+      "mocha": true
+    }
+  }
+}
