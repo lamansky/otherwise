@@ -6,9 +6,11 @@
     "else",
     "fallback"
   ],
-  "author": "John Lamansky",
+  "author": {
+    "name": "Fr. John Lamansky",
+    "url": "lamansky.com"
+  },
   "license": "MIT",
-  "homepage": "https://github.com/lamansky/otherwise",
   "repository": "lamansky/otherwise",
   "main": "index.js",
   "files": [],
