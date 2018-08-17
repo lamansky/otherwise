@@ -14,11 +14,12 @@ npm i otherwise
 
 The module exports a single function.
 
-### Parameter
+### Parameters
 
-Object argument:
-* Optional: `elseThrow` (Error or string): An error to be thrown. A string will be wrapped in an `Error` object automatically.
-* Optional: `elseReturn` or `fallback` (any): A value to return if `elseThrow` is omitted.
+1. Object argument:
+    * Optional: `elseThrow` (Error or string): An error to be thrown. A string will be wrapped in an `Error` object automatically.
+    * Optional: `elseReturn` or `fallback` (any): A value to return if `elseThrow` is omitted.
+2. Optional: `defaultErrorClass` (Class): An Error class in which to wrap `elseThrow` if it is a string.
 
 ### Return Value
 

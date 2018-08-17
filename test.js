@@ -6,11 +6,15 @@ const otherwise = require('.')
 describe('otherwise()', function () {
   it('should throw `elseThrow` if set', function () {
     class CustomError extends Error {}
-    assert.throws(() => otherwise({elseThrow: new CustomError()}), CustomError)
+    assert.throws(() => otherwise({elseThrow: new CustomError()}, TypeError), CustomError)
   })
 
   it('should convert an `elseThrow` string to an error', function () {
     assert.throws(() => otherwise({elseThrow: 'Test'}), Error)
+  })
+
+  it('should convert an `elseThrow` string to an instance of `defaultErrorClass`', function () {
+    assert.throws(() => otherwise({elseThrow: 'Test'}, TypeError), TypeError)
   })
 
   it('should return `elseReturn` if set', function () {
