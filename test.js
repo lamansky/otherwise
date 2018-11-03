@@ -18,9 +18,15 @@ describe('otherwise()', function () {
     assert.strictEqual(called, true)
   })
 
+  it('should pass `args` to `elseCall`', function () {
+    let arg
+    assert.strictEqual(otherwise({elseCall: (fallback, arg1) => { arg = arg1; return fallback() }, elseReturn: 123}, {args: [234]}), 123)
+    assert.strictEqual(arg, 234)
+  })
+
   it('should throw `elseThrow` if set', function () {
     class CustomError extends Error {}
-    assert.throws(() => otherwise({elseThrow: new CustomError()}, TypeError), CustomError)
+    assert.throws(() => otherwise({elseThrow: new CustomError()}, {defaultErrorClass: TypeError}), CustomError)
   })
 
   it('should convert an `elseThrow` string to an error', function () {
@@ -28,7 +34,7 @@ describe('otherwise()', function () {
   })
 
   it('should convert an `elseThrow` string to an instance of `defaultErrorClass`', function () {
-    assert.throws(() => otherwise({elseThrow: 'Test'}, TypeError), TypeError)
+    assert.throws(() => otherwise({elseThrow: 'Test'}, {defaultErrorClass: TypeError}), TypeError)
   })
 
   it('should return `elseReturn` if set', function () {
@@ -41,5 +47,6 @@ describe('otherwise()', function () {
 
   it('should return `undefined` if nothing is set', function () {
     assert.strictEqual(typeof otherwise({}), 'undefined')
+    assert.strictEqual(typeof otherwise(), 'undefined')
   })
 })
