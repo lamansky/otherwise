@@ -16,11 +16,12 @@ The module exports a single function.
 
 ### Parameters
 
-1. Object argument:
-    * Optional: `elseThrow` (Error or string): An error to be thrown. A string will be wrapped in an `Error` object automatically.
-    * Optional: `elseReturn` or `fallback` (any): A value to return if `elseThrow` is omitted.
+1. Optional: Object argument:
+    * `elseCall` (function): If provided, this function will be called with one argument: a function that will invoke the other fallbacks. If the function argument is not called, then `elseThrow` and `elseReturn` will not be taken into consideration, and the return value of the `elseCall` function will be forwarded.
+    * `elseThrow` (Error or string): An error to be thrown. A string will be wrapped in an `Error` object automatically.
+    * `elseReturn` (any): A value to return if `elseThrow` is omitted.
 2. Optional: `defaultErrorClass` (Class): An Error class in which to wrap `elseThrow` if it is a string.
 
 ### Return Value
 
-Returns `elseReturn` (or `fallback`)
+Returns the return value of `elseCall` (if provided) or returns `elseReturn`.

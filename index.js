@@ -1,8 +1,9 @@
 'use strict'
 
 const errate = require('errate')
+const roadblock = require('roadblock')
 
-module.exports = function otherwise ({fallback, elseReturn = fallback, elseThrow}, defaultErrorClass) {
+module.exports = ({fallback, elseCall, elseReturn = fallback, elseThrow} = {}, defaultErrorClass) => roadblock(elseCall, elseCall, () => {
   if (elseThrow) throw errate(elseThrow, defaultErrorClass, {forceClass: false})
   return elseReturn
-}
+})

@@ -18,7 +18,8 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "errate": "^1.1.0"
+    "errate": "^1.1.0",
+    "roadblock": "^1.1.0"
   },
   "devDependencies": {
     "eslint-config-lamansky": "^1.0.0",
