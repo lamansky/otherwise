@@ -1,6 +1,6 @@
 {
   "name": "otherwise",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Executes fallback behavior if a function was unsuccessful.",
   "keywords": [
     "else",
