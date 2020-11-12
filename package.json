@@ -23,8 +23,8 @@
     "roadblock": "^1.1.0"
   },
   "devDependencies": {
-    "eslint-config-lamansky": "^1.0.0",
-    "mocha": "^5.2.0"
+    "eslint-config-lamansky": "^2.0.0",
+    "mocha": "^7.2.0"
   },
   "scripts": {
     "test": "mocha"
